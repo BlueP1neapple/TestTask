@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RandomFigure</title>
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+
+    $(function (){
+        $('#form').submit(function (e){
+            e.preventDefault();
+            $.ajax({
+                type: "POST",
+                url: "index.php",
+                success: function (result){
+                    $('#result').append(result);
+                }
+
+            });
+        });
+    })
+
+
+
+
+
+</script>
+<form id="form">
+    <input type="submit" name="submit" id='enter' value="Random Generate"/>
+</form>
+
+
+<div id="result"></div>
+
+
+
+
+
+
+</body>
+</html>
