@@ -13,9 +13,11 @@ require_once "Dmitry/Classes/Figure.php";
             $this->side1 + $this->side2 > $this->side2) {
                 $p = 1 / 2 * ($this->side0 + $this->side1 + $this->side2);
                 $this->setS(sqrt($p));
-                echo "Triangle witch sides: ".$this->side0.", ".$this->side1.", ".$this->side2.": S = ".$this->getS()."<br \>";
+
+                return  [$this->getS(), $this->side0, $this->side1, $this->side2];
             } else {
-                echo "Triangle witch sides: ".$this->side0.", ".$this->side1.", ".$this->side2." cant exist! <br \>";
+
+                return 0;
             }
         }
     }

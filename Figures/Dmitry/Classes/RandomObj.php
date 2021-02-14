@@ -23,20 +23,30 @@ class RandomObj
             case '1':
                 $cir = new Circle();
                 $cir->rad = $this->randomSide();
-                $cir->Area();
-                break;
+                $cir->area();
+                return $cir->area();
             case '2':
                 $tri = new Triangle();
-                $tri->side0 = $this->randomSide();
-                $tri->side1 = $this->randomSide();
-                $tri->side2 = $this->randomSide();
-                $tri->Area();
-                break;
+                $res = 0;
+                while($res == 0)
+                {
+                    $tri->side0 = $this->randomSide();
+                    $tri->side1 = $this->randomSide();
+                    $tri->side2 = $this->randomSide();
+                    $res = $tri->area();
+                    if($res != 0)
+                    {
+                        return $res;
+                    }
+                }
+
+
             case '3':
                 $rect = new Rectangle();
                 $rect->side0 = $this->randomSide();
                 $rect->side1 = $this->randomSide();
-                $rect->Area();
+                return $rect->area();
+
         }
     }
 }

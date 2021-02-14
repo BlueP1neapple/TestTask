@@ -1,13 +1,18 @@
 
 
 <?php
-require_once 'Dmitry/Classes/RandomObj.php';
-use Dmitry\Classes\RandomObj as RandO;
+require_once 'Dmitry/Classes/SortedObject.php';
+require_once 'Dmitry/Classes/Save.php';
+use Dmitry\Classes\SortedObject as SorObj;
+use Dmitry\Classes\Save as SaveF;
 
-
-
-$ro = new RandO();
-$ro->addRandomObject();
+if(isset($_POST['save']))
+{
+    $sf = new SaveF();
+    $sf->saveFile();
+}
+$ro = new SorObj();
+$ro->sortObject();
 
 ?>
 

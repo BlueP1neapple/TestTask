@@ -10,6 +10,7 @@ require_once "Dmitry/Classes/Figure.php";
         function area()
         {
             $this->setS($this->side0 * $this->side1);
-            echo "Rectangle with side ".$this->side0.", ".$this->side1.": S = ".$this->getS()."<br \>";
+            return [$this->getS(), $this->side0, $this->side1];
+
         }
     }

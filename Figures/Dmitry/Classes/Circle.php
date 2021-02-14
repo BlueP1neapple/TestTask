@@ -9,6 +9,7 @@ require_once "Dmitry/Classes/Figure.php";
         function area()
         {
             $this->setS(M_PI * $this->rad ^ 2);
-            echo "Circle with radius ".$this->rad.": S =".$this->getS()."<br \>";
+
+            return [$this->getS(), $this->rad];
         }
     }
