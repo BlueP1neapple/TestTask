@@ -21,31 +21,25 @@
             });
         });
     })
-    $(function (){
-        $('#form2').save(function (e){
-            e.preventDefault();
-            $.ajax({
-                type: "POST",
-                url: "index.php",
-                success: function (){
-                    alert("Saved")
-                }
-            })
-        })
-    })
 
-
-
+    $(document).ready(function(){
+        $("button").click(function(){
+            $.ajax({ type: 'POST',
+                url: 'Dmitry/Functions/readFile.php',
+                success: function(data) {
+                $("p").text(data);
+            }
+            });
+        });
+    });
 
 </script>
-
+<button type="button">Read File</button> <p></p>
 <form id="form">
     <input type="submit" name="submit" id='enter' value="Random Generate"/>
 
 </form>
-<form id="form2">
-    <input type="submit" name="save" value="Save in to file">
-</form>
+
 
 
 <div id="result"></div>
